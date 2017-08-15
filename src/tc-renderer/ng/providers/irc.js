@@ -113,7 +113,7 @@ angular.module('tc').factory('irc', $rootScope => {
         ee.ready = false;
         args.unshift('disconnected');
         ee.emit.apply(ee, args);
-        client.once('connected', onlyEmitDisconnectedOnce);
+        if (client) client.once('connected', onlyEmitDisconnectedOnce);
         setTimeout(() => $rootScope.$apply(), 0);
       });
     }
@@ -184,7 +184,11 @@ angular.module('tc').factory('irc', $rootScope => {
    */
   function onBadLogin(cb) {
     client.on('disconnected', (reason) => {
-      const reasons = ['Error logging in.', 'Login unsuccessful.'];
+      const reasons = [
+        'Error logging in.',
+        'Login unsuccessful.',
+        'Login authentication failed'
+      ];
       if (reasons.includes(reason)) {
         ee.ready = false;
         ee.badLogin = reason;
