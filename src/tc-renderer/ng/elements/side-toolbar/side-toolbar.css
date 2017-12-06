@@ -1,3 +1,8 @@
+side-toolbar {
+  display: flex;
+  min-height: 34px;
+}
+
 side-toolbar .zmdi {
   vertical-align: -3px;
 }
@@ -13,10 +18,6 @@ side-toolbar .md-button {
   border-radius: 0 !important;
   margin: 0;
   line-height: 34px;
-  min-height: 34px;
-}
-
-side-toolbar {
   min-height: 34px;
 }
 
