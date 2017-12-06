@@ -10,7 +10,7 @@
     "angular": "^1.6.7",
     "angular-animate": "^1.6.7",
     "angular-aria": "^1.6.7",
-    "angular-material": "0.10.1",
+    "angular-material": "^1.1.5",
     "angular-sanitize": "^1.6.7",
     "axios": "0.9.1",
     "electron-window-state": "^4.1.1",
